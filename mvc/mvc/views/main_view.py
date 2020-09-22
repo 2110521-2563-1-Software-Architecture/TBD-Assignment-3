@@ -51,7 +51,8 @@ class MainView(BaseView):
         # Your code here
         # Update view
         # Your code here
-        pass
+        self.controller.clear_all()
+        self.update_view(self.controller.get_all_notes())
 
     def on_add_note_button_clicked(self, e):
         content = self.note_input.GetValue()
@@ -60,4 +61,5 @@ class MainView(BaseView):
         # Your code here
         # Update view
         # Your code here
-        pass
+        self.controller.add_note(content)
+        self.update_view(self.controller.get_all_notes())
